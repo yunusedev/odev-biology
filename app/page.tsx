@@ -83,8 +83,9 @@ function ContributorTable({
   return (
     <div className="mt-16 max-w-full flex flex-col items-center gap-4">
       <h3 className="font-semibold text-foreground">Katkıda bulunanlar</h3>
+      <div className="max-w-full overflow-x-auto">
       <GradientBorder className="from-slate-200/20 via-slate-200/15">
-        <div className="rounded-[inherit] bg-accent overflow-x-auto">
+        <div className="rounded-[inherit] bg-accent">
           <table>
             <thead>
               <tr className="text-left bg-secondary border-b border-b-slate-200/20">
@@ -139,6 +140,7 @@ function ContributorTable({
                         />
                       </div>
                     </GradientBorder>
+                    </div>
                     <span className="p-0.5 px-1.5 text-emerald-900 font-semibold text-xs rounded-full bg-green-200">
                       {((item.heart / contributors.length) * 100).toFixed(0)}%
                     </span>
