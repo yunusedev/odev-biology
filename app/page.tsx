@@ -81,7 +81,7 @@ function ContributorTable({
   contributors: { name: string; role: string; heart: number }[];
 }) {
   return (
-    <div className="mt-16 px-6 flex flex-col items-center gap-4">
+    <div className="mt-16 max-w-full flex flex-col items-center gap-4">
       <h3 className="font-semibold text-foreground">Katkıda bulunanlar</h3>
       <GradientBorder className="from-slate-200/20 via-slate-200/15">
         <div className="rounded-[inherit] bg-accent">
@@ -220,7 +220,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="h-screen relative flex flex-col gap-6 items-center justify-center mb-12 px-6">
+      <section className="relative flex flex-col gap-6 items-center justify-center my-32 px-6">
         <div className="fixed top-0 pointer-events-none left-0 w-full h-64 bg-white/15 blur-[500px]" />
         <div className="fixed bottom-0 pointer-events-none left-0 w-full h-64 bg-white/15 blur-[500px]" />
         <SectionHeader
