@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <section className="flex flex-col items-center mb-12">
+      <section className="flex flex-col items-center mb-12 px-6">
         <SectionHeader
           category="Kerem söylüyor..."
           title="Proje bitti."
