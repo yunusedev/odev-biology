@@ -372,6 +372,13 @@ export default function Home() {
         ))}
       </div>
     </section>
+  <section className="mb-12 flex flex-col items-center px-6">
+    <SectionHeader
+  category="Değerlendirme"
+      title="Değerlendirme"
+      subtitle="Fotosentez, günlük hayatta aklımıza gelmese de önemli bir etkiye sahiptir. Bitkiler ve diğer tek hücreli canlılar fotosentez yaparak oksijen döngüsünü devam ettirir. Aldığımız çoğu nefesleri bu bitkiler ve canlılar sayesinde alırız."
+      />
+  </section>
       {/* Footer */}
       <section className="flex flex-col items-center mb-12 px-6">
         <SectionHeader
