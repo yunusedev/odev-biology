@@ -159,44 +159,7 @@ function ContributorTable({
 // Main Page
 // --------------------
 export default function Home() {
-  const fotosentez = [
-    {
-      baslik: "Fotosentez nerede gerçekleşir?",
-      icerik:
-        "Fotosentez bitki hücrelerinde bulunan kloroplast adlı yapıda gerçekleşir...",
-    },
-    {
-      baslik: "Fotosentezin amacı nedir?",
-      icerik: "Fotosentezin amacı, bitkinin kendi besinini üretmesidir...",
-    },
-    {
-      baslik: "Gerekli maddeler",
-      icerik:
-        "Fotosentez için bitkilerin üç temel maddeye ihtiyacı vardır: su, CO₂ ve güneş ışığı...",
-    },
-    {
-      baslik: "Işığa bağlı evre",
-      icerik: "Bu evrede bitki, güneş ışığını kullanarak enerji üretir...",
-    },
-    {
-      baslik: "Işıktan bağımsız evre",
-      icerik:
-        "Bu evrede bitki, bir önceki evrede elde ettiği enerjiyi kullanarak karbondioksiti glikoza dönüştürür...",
-    },
-    {
-      baslik: "Temel fotosentez denklemi",
-      icerik: "Karbondioksit + Su → Glikoz + Oksijen...",
-    },
-    {
-      baslik: "Ortaya çıkan ürünler",
-      icerik:
-        "Fotosentez sonucunda iki önemli ürün ortaya çıkar: glikoz ve oksijen...",
-    },
-    {
-      baslik: "Fotosentezin önemi",
-      icerik: "Fotosentez, dünyadaki yaşamın temelidir...",
-    },
-  ];
+  const fotosentez = [ { baslik: "Fotosentez nerede gerçekleşir?", icerik: "Fotosentez, bitki hücrelerinde bulunan kloroplast adlı yapılarda gerçekleşir. Kloroplastların içinde yeşil renkli klorofil maddesi bulunur. Bu madde, güneş ışığını yakalar ve bitkinin enerji üretmesini sağlar. Kloroplastlar özellikle yapraklarda çok fazladır çünkü yapraklar ışığı en iyi alan kısımdır.", }, { baslik: "Fotosentezin amacı nedir?", icerik: "Fotosentezin amacı, bitkinin kendi besinini üretmesidir. Bitki, güneş enerjisini kullanarak karbondioksit ve sudan şeker (glikoz) üretir. Ürettiği bu şekeri enerji kaynağı olarak kullanır. Ayrıca bu süreçte oksijen açığa çıkar ve havaya karışır.", }, { baslik: "Gerekli maddeler", icerik: "Fotosentez için bitkilerin üç şeye ihtiyacı vardır: su, karbondioksit ve güneş ışığı. Su, kökler aracılığıyla topraktan alınır. Karbondioksit, yapraklarda bulunan küçük deliklerden (stoma) girer. Güneş ışığı ise yaprağa vurduğunda klorofil tarafından emilir ve enerjiye dönüştürülür.", }, { baslik: "Işığa bağlı evre", icerik: "Bu evrede bitki, güneş ışığını kullanarak enerji üretir. Işık sayesinde su parçalanır ve oksijen ortaya çıkar. Aynı zamanda bitki, fotosentezin devamı için gerekli olan enerji taşıyıcı maddeleri üretir.", }, { baslik: "Işıktan bağımsız evre", icerik: "Bu evrede bitki, ışık olmadan da çalışabilir. Daha önce ışıkla üretilen enerji kullanılarak karbondioksit ve su, şeker (glikoz) haline getirilir. Yani burada bitki, aslında kendi besinini oluşturur.", }, { baslik: "Temel fotosentez denklemi", icerik: "Fotosentez şu şekilde özetlenir: Karbondioksit + Su + Güneş ışığı → Glikoz + Oksijen. Yani bitki havadan karbondioksit alır, kökten su çeker, ışığı kullanarak bunları glikoza ve oksijene dönüştürür.", }, { baslik: "Ortaya çıkan ürünler", icerik: "Fotosentez sonucunda iki önemli madde oluşur: glikoz ve oksijen. Glikoz, bitkinin enerjisini sağlar. Oksijen ise atmosfere karışır ve insanlar ile hayvanların solunum yapmasını sağlar.", }, { baslik: "Fotosentezin önemi", icerik: "Fotosentez dünyadaki yaşam için çok önemlidir. Çünkü bitkiler sayesinde hem besin hem de oksijen üretilir. Fotosentez olmasaydı insanlar ve hayvanlar yaşayamazdı. Ayrıca fotosentez, havadaki karbondioksiti azaltarak havayı temiz tutar.", }, { baslik: "Fotosentezi etkileyen faktörler", icerik: "Fotosentezin hızını ışık miktarı, sıcaklık, su ve karbondioksit miktarı etkiler. Işık ve karbondioksit artarsa fotosentez hızlanır, ama çok yüksek sıcaklık veya su eksikliği süreci yavaşlatır.", }, ];
 
   const contributors = [
     { name: "Yunus Emre GÜN", role: "Modelin oluşturulması", heart: 5 },
