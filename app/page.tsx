@@ -183,6 +183,69 @@ export default function Home() {
     { name: "Metehan SARIÇALI", role: "Proje Yöneticisi", heart: 5 },
   ];
 
+  const sorular = [
+  {
+    soru: "1️⃣ Fotosentez hangi hücre yapısında gerçekleşir?",
+    secenekler: ["Mitokondri", "Kloroplast", "Ribozom", "Çekirdek"],
+    cevap: "Kloroplast",
+  },
+  {
+    soru: "2️⃣ Fotosentez sırasında hangi gaz kullanılır?",
+    secenekler: ["Oksijen", "Karbondioksit", "Azot", "Helyum"],
+    cevap: "Karbondioksit",
+  },
+  {
+    soru: "3️⃣ Fotosentez sonucunda hangi madde açığa çıkar?",
+    secenekler: ["Su", "Protein", "Oksijen", "Karbondioksit"],
+    cevap: "Oksijen",
+  },
+  {
+    soru: "4️⃣ Fotosentezin temel amacı nedir?",
+    secenekler: [
+      "Bitkinin oksijen üretmesi",
+      "Bitkinin enerji (besin) üretmesi",
+      "Su depolamak",
+      "Toprakta kökleri güçlendirmek",
+    ],
+    cevap: "Bitkinin enerji (besin) üretmesi",
+  },
+  {
+    soru: "5️⃣ Işığa bağlı tepkimelerde hangi olay gerçekleşir?",
+    secenekler: [
+      "Glikoz sentezi",
+      "Su parçalanması ve oksijenin açığa çıkması",
+      "Karbondioksit kullanımı",
+      "ATP’nin harcanması",
+    ],
+    cevap: "Su parçalanması ve oksijenin açığa çıkması",
+  },
+  {
+    soru: "6️⃣ Fotosentez için gerekli üç temel madde hangileridir?",
+    secenekler: [
+      "Su, karbondioksit, ışık",
+      "Oksijen, su, azot",
+      "Su, glikoz, ışık",
+      "Mineral, su, oksijen",
+    ],
+    cevap: "Su, karbondioksit, ışık",
+  },
+  {
+    soru: "7️⃣ Işıktan bağımsız evrede ne üretilir?",
+    secenekler: ["Oksijen", "Su", "Glikoz", "ATP"],
+    cevap: "Glikoz",
+  },
+  {
+    soru: "8️⃣ Fotosentez olmasaydı dünyada ne olurdu?",
+    secenekler: [
+      "Oksijen miktarı artardı",
+      "Canlılar besin bulamazdı",
+      "Bitkiler daha hızlı büyürdü",
+      "Karbondioksit azalırdı",
+    ],
+    cevap: "Canlılar besin bulamazdı",
+  },
+];
+  
   return (
     <main>
       {/* Hero Section */}
@@ -259,7 +322,30 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+  {/* Quiz Section */}
+<section className="px-6 flex flex-col items-center mb-16">
+  <SectionHeader
+    category="Test Zamanı"
+    title="Fotosentez Bilgini Ölç!"
+    subtitle="Aşağıdaki sorularla fotosentez hakkındaki bilgini test et."
+  />
+  <div className="mt-8 grid gap-6 max-w-2xl w-full">
+    {sorular.map((soru, i) => (
+      <GradientBorder key={i} className="from-slate-200/35">
+        <div className="bg-secondary rounded-[inherit] p-4 text-left">
+          <h3 className="font-semibold text-foreground">{soru.soru}</h3>
+          <ul className="mt-2 space-y-1">
+            {soru.secenekler.map((secenek, j) => (
+              <li key={j} className="text-sm text-muted">
+                • {secenek}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </GradientBorder>
+    ))}
+  </div>
+</section>
       {/* Footer */}
       <section className="flex flex-col items-center mb-12 px-6">
         <SectionHeader
