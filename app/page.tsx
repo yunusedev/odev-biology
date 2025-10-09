@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-
+import { useState } from "react"
 // --------------------
 // Reusable Components
 // --------------------
@@ -160,8 +160,13 @@ function ContributorTable({
 // Main Page
 // --------------------
 export default function Home() {
+  const [cevaplar, setCevaplar] = useState({})
+  const harfler = ["A", "B", "C", "D"];
   const fotosentez = [ { baslik: "Fotosentez nerede gerçekleşir?", icerik: "Fotosentez, bitki hücrelerinde bulunan kloroplast adlı yapılarda gerçekleşir. Kloroplastların içinde yeşil renkli klorofil maddesi bulunur. Bu madde, güneş ışığını yakalar ve bitkinin enerji üretmesini sağlar. Kloroplastlar özellikle yapraklarda çok fazladır çünkü yapraklar ışığı en iyi alan kısımdır.", }, { baslik: "Fotosentezin amacı nedir?", icerik: "Fotosentezin amacı, bitkinin kendi besinini üretmesidir. Bitki, güneş enerjisini kullanarak karbondioksit ve sudan şeker (glikoz) üretir. Ürettiği bu şekeri enerji kaynağı olarak kullanır. Ayrıca bu süreçte oksijen açığa çıkar ve havaya karışır.", }, { baslik: "Gerekli maddeler", icerik: "Fotosentez için bitkilerin üç şeye ihtiyacı vardır: su, karbondioksit ve güneş ışığı. Su, kökler aracılığıyla topraktan alınır. Karbondioksit, yapraklarda bulunan küçük deliklerden (stoma) girer. Güneş ışığı ise yaprağa vurduğunda klorofil tarafından emilir ve enerjiye dönüştürülür.", }, { baslik: "Işığa bağlı evre", icerik: "Bu evrede bitki, güneş ışığını kullanarak enerji üretir. Işık sayesinde su parçalanır ve oksijen ortaya çıkar. Aynı zamanda bitki, fotosentezin devamı için gerekli olan enerji taşıyıcı maddeleri üretir.", }, { baslik: "Işıktan bağımsız evre", icerik: "Bu evrede bitki, ışık olmadan da çalışabilir. Daha önce ışıkla üretilen enerji kullanılarak karbondioksit ve su, şeker (glikoz) haline getirilir. Yani burada bitki, aslında kendi besinini oluşturur.", }, { baslik: "Temel fotosentez denklemi", icerik: "Fotosentez şu şekilde özetlenir: Karbondioksit + Su + Güneş ışığı → Glikoz + Oksijen. Yani bitki havadan karbondioksit alır, kökten su çeker, ışığı kullanarak bunları glikoza ve oksijene dönüştürür.", }, { baslik: "Ortaya çıkan ürünler", icerik: "Fotosentez sonucunda iki önemli madde oluşur: glikoz ve oksijen. Glikoz, bitkinin enerjisini sağlar. Oksijen ise atmosfere karışır ve insanlar ile hayvanların solunum yapmasını sağlar.", }, { baslik: "Fotosentezin önemi", icerik: "Fotosentez dünyadaki yaşam için çok önemlidir. Çünkü bitkiler sayesinde hem besin hem de oksijen üretilir. Fotosentez olmasaydı insanlar ve hayvanlar yaşayamazdı. Ayrıca fotosentez, havadaki karbondioksiti azaltarak havayı temiz tutar.", }, { baslik: "Fotosentezi etkileyen faktörler", icerik: "Fotosentezin hızını ışık miktarı, sıcaklık, su ve karbondioksit miktarı etkiler. Işık ve karbondioksit artarsa fotosentez hızlanır, ama çok yüksek sıcaklık veya su eksikliği süreci yavaşlatır.", }, ];
-
+  const handleClick = (index, secenek) => {
+    if (cevaplar[index]) return; // aynı soruya ikinci tıklamayı engelle
+    setCevaplar((prev) => ({ ...prev, [index]: secenek }));
+  };
   const contributors = [
     { name: "Yunus Emre GÜN", role: "Modelin oluşturulması", heart: 5 },
     {
@@ -322,29 +327,51 @@ export default function Home() {
         </div>
       </section>
   {/* Quiz Section */}
-<section className="px-6 flex flex-col items-center mb-16">
-  <SectionHeader
-    category="Test Zamanı"
-    title="Fotosentez Bilgini Ölç!"
-    subtitle="Aşağıdaki sorularla fotosentez hakkındaki bilgini test et."
-  />
-  <div className="mt-8 grid gap-6 max-w-2xl w-full">
-    {sorular.map((soru, i) => (
-      <GradientBorder key={i} className="from-slate-200/35">
-        <div className="bg-secondary rounded-[inherit] p-4 text-left">
-          <h3 className="font-semibold text-foreground">{soru.soru}</h3>
-          <ul className="mt-2 space-y-1">
-            {soru.secenekler.map((secenek, j) => (
-              <li key={j} className="text-sm text-muted">
-                • {secenek}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </GradientBorder>
-    ))}
-  </div>
-</section>
+  <section className="px-6 flex flex-col items-center mb-16">
+      <SectionHeader
+        category="Test Zamanı"
+        title="Fotosentez Bilgini Ölç!"
+        subtitle="Aşağıdaki sorulara tıkla ve bilgini test et!"
+      />
+
+      <div className="mt-8 grid gap-6 max-w-2xl w-full">
+        {sorular.map((soru, i) => (
+          <GradientBorder key={i} className="from-slate-200/35">
+            <div className="bg-secondary rounded-[inherit] p-4 text-left">
+              <h3 className="font-semibold text-foreground mb-3">
+                {i + 1}. {soru.soru}
+              </h3>
+
+              <ul className="space-y-2">
+                {soru.secenekler.map((secenek, j) => {
+                  const secilen = cevaplar[i];
+                  const dogru = secenek === soru.cevap;
+
+                  // Renk durumları
+                  let renk = "bg-muted hover:bg-muted/60";
+                  if (secilen) {
+                    if (secilen === secenek && dogru) renk = "bg-green-500/80 text-white";
+                    else if (secilen === secenek && !dogru) renk = "bg-red-500/80 text-white";
+                    else if (dogru) renk = "bg-green-500/20";
+                  }
+
+                  return (
+                    <li
+                      key={j}
+                      onClick={() => handleClick(i, secenek)}
+                      className={`cursor-pointer rounded-md px-3 py-2 transition ${renk}`}
+                    >
+                      <span className="font-semibold mr-2">{harfler[j]}.</span>
+                      {secenek}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </GradientBorder>
+        ))}
+      </div>
+    </section>
       {/* Footer */}
       <section className="flex flex-col items-center mb-12 px-6">
         <SectionHeader
