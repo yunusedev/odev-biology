@@ -140,7 +140,7 @@ function ContributorTable({
                         />
                       </div>
                     </GradientBorder>
-                    </div>
+                  
                     <span className="p-0.5 px-1.5 text-emerald-900 font-semibold text-xs rounded-full bg-green-200">
                       {((item.heart / contributors.length) * 100).toFixed(0)}%
                     </span>
@@ -151,6 +151,7 @@ function ContributorTable({
           </table>
         </div>
       </GradientBorder>
+        </div>
     </div>
   );
 }
