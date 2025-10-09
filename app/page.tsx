@@ -263,9 +263,9 @@ export default function Home() {
       {/* Footer */}
       <section className="flex flex-col items-center mb-12 px-6">
         <SectionHeader
-          category="Kerem söylüyor..."
+          category="Bitiş"
           title="Proje bitti."
-          subtitle="Projenin sonuna ulaşmış bulunmaktayız. Emeği geçen herkese teşekkürlerimi sunuyorum, özellikle Metehan kardeşimiz projenin bel kemiğidir."
+          subtitle="Projenin sonuna ulaşmış bulunmaktayız. Emeği geçen herkese teşekkürlerimi sunuyorum."
         />
       </section>
 </section>
