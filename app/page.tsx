@@ -336,19 +336,19 @@ export default function Home() {
 
       <div className="mt-8 grid gap-6 max-w-2xl w-full">
         {sorular.map((soru, i) => (
-          <GradientBorder key={i} className="from-slate-200/35">
-            <div className="bg-secondary rounded-[inherit] p-4 text-left">
-              <h3 className="font-semibold text-foreground mb-3">
-                {i + 1}. {soru.soru}
+          <GradientBorder key={i} className="">
+            <div className="bg-secondary rounded-[inherit] flex flex-col gap-2 p-4 text-left">
+              <span className="text-sm text-muted">{i + 1}. Soru</span>
+              <h3 className="font-semibold text-foreground">
+                {soru.soru}
               </h3>
-
-              <ul className="space-y-2">
+              <ul className="flex flex-col gap-1.5">
                 {soru.secenekler.map((secenek, j) => {
                   const secilen = cevaplar[i];
                   const dogru = secenek === soru.cevap;
 
                   // Renk durumları
-                  let renk = "bg-muted hover:bg-muted/60";
+                  let renk = "bg-accent";
                   if (secilen) {
                     if (secilen === secenek && dogru) renk = "bg-green-500/80 text-white";
                     else if (secilen === secenek && !dogru) renk = "bg-red-500/80 text-white";
@@ -359,7 +359,7 @@ export default function Home() {
                     <li
                       key={j}
                       onClick={() => handleClick(i, secenek)}
-                      className={`cursor-pointer rounded-md px-3 py-2 transition ${renk}`}
+                      className={`cursor-pointer rounded-lg px-3 py-2 transition ${renk}`}
                     >
                       <span className="font-semibold mr-2">{harfler[j]}.</span>
                       {secenek}
