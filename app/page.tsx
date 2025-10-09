@@ -182,69 +182,68 @@ export default function Home() {
     { name: "Kerem GÜNDOĞAN", role: "Websitenin oluşturulması", heart: 6 },
     { name: "Metehan SARIÇALI", role: "Proje Yöneticisi", heart: 5 },
   ];
-
   const sorular = [
-  {
-    soru: "1️⃣ Fotosentez hangi hücre yapısında gerçekleşir?",
-    secenekler: ["Mitokondri", "Kloroplast", "Ribozom", "Çekirdek"],
-    cevap: "Kloroplast",
-  },
-  {
-    soru: "2️⃣ Fotosentez sırasında hangi gaz kullanılır?",
-    secenekler: ["Oksijen", "Karbondioksit", "Azot", "Helyum"],
-    cevap: "Karbondioksit",
-  },
-  {
-    soru: "3️⃣ Fotosentez sonucunda hangi madde açığa çıkar?",
-    secenekler: ["Su", "Protein", "Oksijen", "Karbondioksit"],
-    cevap: "Oksijen",
-  },
-  {
-    soru: "4️⃣ Fotosentezin temel amacı nedir?",
-    secenekler: [
-      "Bitkinin oksijen üretmesi",
-      "Bitkinin enerji (besin) üretmesi",
-      "Su depolamak",
-      "Toprakta kökleri güçlendirmek",
-    ],
-    cevap: "Bitkinin enerji (besin) üretmesi",
-  },
-  {
-    soru: "5️⃣ Işığa bağlı tepkimelerde hangi olay gerçekleşir?",
-    secenekler: [
-      "Glikoz sentezi",
-      "Su parçalanması ve oksijenin açığa çıkması",
-      "Karbondioksit kullanımı",
-      "ATP’nin harcanması",
-    ],
-    cevap: "Su parçalanması ve oksijenin açığa çıkması",
-  },
-  {
-    soru: "6️⃣ Fotosentez için gerekli üç temel madde hangileridir?",
-    secenekler: [
-      "Su, karbondioksit, ışık",
-      "Oksijen, su, azot",
-      "Su, glikoz, ışık",
-      "Mineral, su, oksijen",
-    ],
-    cevap: "Su, karbondioksit, ışık",
-  },
-  {
-    soru: "7️⃣ Işıktan bağımsız evrede ne üretilir?",
-    secenekler: ["Oksijen", "Su", "Glikoz", "ATP"],
-    cevap: "Glikoz",
-  },
-  {
-    soru: "8️⃣ Fotosentez olmasaydı dünyada ne olurdu?",
-    secenekler: [
-      "Oksijen miktarı artardı",
-      "Canlılar besin bulamazdı",
-      "Bitkiler daha hızlı büyürdü",
-      "Karbondioksit azalırdı",
-    ],
-    cevap: "Canlılar besin bulamazdı",
-  },
-];
+    {
+      soru: "Fotosentez hangi hücre yapısında gerçekleşir?",
+      secenekler: ["Mitokondri", "Kloroplast", "Ribozom", "Çekirdek"],
+      cevap: "Kloroplast",
+    },
+    {
+      soru: "Fotosentez sırasında hangi gaz kullanılır?",
+      secenekler: ["Oksijen", "Karbondioksit", "Azot", "Helyum"],
+      cevap: "Karbondioksit",
+    },
+    {
+      soru: "Fotosentez sonucunda hangi madde açığa çıkar?",
+      secenekler: ["Su", "Protein", "Oksijen", "Karbondioksit"],
+      cevap: "Oksijen",
+    },
+    {
+      soru: "Fotosentezin temel amacı nedir?",
+      secenekler: [
+        "Bitkinin oksijen üretmesi",
+        "Bitkinin enerji (besin) üretmesi",
+        "Su depolamak",
+        "Toprakta kökleri güçlendirmek",
+      ],
+      cevap: "Bitkinin enerji (besin) üretmesi",
+    },
+    {
+      soru: "Işığa bağlı tepkimelerde hangi olay gerçekleşir?",
+      secenekler: [
+        "Glikoz sentezi",
+        "Su parçalanması ve oksijenin açığa çıkması",
+        "Karbondioksit kullanımı",
+        "ATP’nin harcanması",
+      ],
+      cevap: "Su parçalanması ve oksijenin açığa çıkması",
+    },
+    {
+      soru: "Fotosentez için gerekli üç temel madde hangileridir?",
+      secenekler: [
+        "Su, karbondioksit, ışık",
+        "Oksijen, su, azot",
+        "Su, glikoz, ışık",
+        "Mineral, su, oksijen",
+      ],
+      cevap: "Su, karbondioksit, ışık",
+    },
+    {
+      soru: "Işıktan bağımsız evrede ne üretilir?",
+      secenekler: ["Oksijen", "Su", "Glikoz", "ATP"],
+      cevap: "Glikoz",
+    },
+    {
+      soru: "Fotosentez olmasaydı dünyada ne olurdu?",
+      secenekler: [
+        "Oksijen miktarı artardı",
+        "Canlılar besin bulamazdı",
+        "Bitkiler daha hızlı büyürdü",
+        "Karbondioksit azalırdı",
+      ],
+      cevap: "Canlılar besin bulamazdı",
+    },
+  ];
   
   return (
     <main>
